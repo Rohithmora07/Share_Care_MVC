@@ -1,0 +1,43 @@
+extends ../layout
+
+block content
+  .home-hero
+    .hero-overlay
+      .hero-box.left
+        h1.hero-title ShareCare
+        p.lead.hero-subtitle Help orphanages grow with transparent crowdfunding and volunteer support.
+        .btn-container
+          a.btn.btn-orange.me-3(href="/donations") Donate Now
+          a.btn.btn-outline-orange(href="/volunteers") Volunteer
+
+  .container.mt-5
+    .row.text-center
+      .col-md-4
+        .card.card-hover.h-100.p-4
+          .card-body
+            h5.card-title Trust
+            p.card-text Every donation is tracked and used transparently.
+      .col-md-4
+        .card.card-hover.h-100.p-4
+          .card-body
+            h5.card-title Impact
+            p.card-text Support education, food, and care for children.
+      .col-md-4
+        .card.card-hover.h-100.p-4
+          .card-body
+            h5.card-title Community
+            p.card-text Join volunteers making a real difference.
+
+    .text-center.mt-5
+      h2 Recent Activity
+      .row.justify-content-center
+        .col-md-6
+          .card.mb-3
+            .card-body
+              h6 Last Donation
+              p.mb-0 ₹500 by Priya (2 hours ago)
+        .col-md-6
+          .card.mb-3
+            .card-body
+              h6 New Volunteer
+              p.mb-0 Amit joined as Teacher (1 day ago)

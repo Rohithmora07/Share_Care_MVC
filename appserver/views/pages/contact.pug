@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  .container.py-5
+    h1.text-center Contact Us
+    form.card.p-4.shadow.mx-auto(style="max-width:500px;" action="/contact" method="POST")
+      .mb-3
+        label Name
+        input.form-control(type="text" name="name" required)
+      .mb-3
+        label Email
+        input.form-control(type="email" name="email" required)
+      .mb-3
+        label Message
+        textarea.form-control(name="message" rows="5" required)
+      button.btn.btn-primary.w-100 Send

@@ -1,0 +1,16 @@
+header
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light.shadow-sm
+    .container
+      a.navbar-brand(href="/") ShareCare
+      button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav")
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav.ms-auto
+          li.nav-item: a.nav-link(href="/") Home
+          li.nav-item: a.nav-link(href="/donate") Donate
+          li.nav-item: a.nav-link(href="/volunteer") Volunteer
+          li.nav-item: a.nav-link(href="/about") About
+          li.nav-item: a.nav-link(href="/contact") Contact
+          li.nav-item: a.nav-link(href="/login") Login / Signup
+a.btn.btn-orange(href="#", onclick="openDonatePopup()") Donate Now
+a.btn.btn-outline-orange(href="#", onclick="openVolunteerPopup()") Volunteer

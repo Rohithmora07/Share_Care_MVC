@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+  .container.py-5
+    .card.mx-auto.shadow.border-0(style="max-width: 420px;")
+      .card-header.bg-success.text-white.text-center
+        h3.mb-0 Register for ShareCare
+      .card-body.p-4
+
+        if error
+          .alert.alert-danger.alert-dismissible.fade.show
+            | #{error}
+            button.btn-close(type="button" data-bs-dismiss="alert")
+
+        form(action="/auth/register" method="POST")
+          .mb-3
+            label.form-label(for="name") Full Name
+            input#name.form-control(type="text" name="name" placeholder="John Doe" required autofocus)
+
+          .mb-3
+            label.form-label(for="email") Email Address
+            input#email.form-control(type="email" name="email" placeholder="you@example.com" required)
+
+          .mb-4.position-relative
+            label.form-label(for="password") Password
+            input#regPassword.form-control(type="password" name="password" placeholder="••••••••" minlength="6" required)
+            span#toggleRegPassword.position-absolute.top-50.end-0.translate-middle-y.me-3(
+              style="cursor: pointer; font-size: 1.2rem; user-select: none;"
+            ) Show password
+
+          button.btn.btn-success.w-100.fw-bold(type="submit") Create Account
+
+        hr.my-4
+
+        p.text-center.mb-0
+          | Already have an account? 
+          a.link-primary.fw-medium(href="/auth/login") Login here
+
+  // Password Toggle Script
+  script.
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('toggleRegPassword');
+      const input = document.getElementById('regPassword');
+
+      toggle.addEventListener('click', () => {
+        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+        input.setAttribute('type', type);
+        toggle.textContent = type === 'password' ? 'Show password' : 'Hide password';
+      });
+    });

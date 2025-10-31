@@ -1,0 +1,23 @@
+// views/partials/volunteerPopup.pug
+#volunteerPopup.popup-overlay(onclick="closeVolunteerPopup()")
+  .popup-content(onclick="event.stopPropagation()")
+    .popup-header
+      h2 Volunteer Application
+      button.popup-close(onclick="closeVolunteerPopup()") ×
+    .popup-body
+      form#volunteerPopupForm
+        .form-step.active(data-step="1")
+          h3 Personal Info
+          input(type="text" placeholder="First Name" required)
+          input(type="text" placeholder="Last Name" required)
+          input(type="email" placeholder="Email" required)
+          input(type="tel" placeholder="Phone" required)
+
+        .form-step(data-step="2")
+          h3 Availability
+          // checkboxes, select...
+
+        .form-navigation
+          button#prevStepBtn(type="button" onclick="previousStep()" style="display:none") Previous
+          button#nextStepBtn(type="button" onclick="nextStep()") Next
+          button#submitBtn(type="submit" style="display:none") Submit

@@ -1,0 +1,21 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.shadow-sm
+  .container
+    a.navbar-brand(href="/") 
+      span.me-1 ☀️
+      span.me-1 🤝
+      | ShareCare
+    button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav")
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarNav
+      ul.navbar-nav.me-auto
+        li.nav-item: a.nav-link(href="/") Home
+        li.nav-item: a.nav-link(href="/donations") Donate
+        li.nav-item: a.nav-link(href="/volunteers") Volunteer
+        li.nav-item: a.nav-link(href="/about") About
+        li.nav-item: a.nav-link(href="/contact") Contact
+      .d-flex
+        if user
+          span.navbar-text.me-3 Welcome, #{user.name}
+          a.btn.btn-outline-light.btn-sm(href="/auth/logout") Logout
+        else
+          a.btn.btn-outline-light.btn-sm(href="/auth/login") Login

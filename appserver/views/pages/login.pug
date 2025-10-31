@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+  .container.mt-5(style="max-width:400px;")
+    h2.text-center.mb-4 Login
+
+    if error
+      .alert.alert-danger #{error}
+    if success
+      .alert.alert-success #{success}
+
+    form(action="/auth/login" method="POST")
+      .mb-3
+        label.form-label(for="email") Email
+        input.form-control(type="email" name="email" required)
+
+      .mb-3.position-relative
+        label.form-label(for="password") Password
+        input#password.form-control(type="password" name="password" required)
+        // 👁️ Toggle icon
+        span.position-absolute.top-50.end-0.translate-middle-y.me-3(
+          id="togglePassword" style="cursor:pointer;"
+        ) 👁️
+
+      button.btn.btn-primary.w-100(type="submit") Login
+
+    p.text-center.mt-3
+      | Don’t have an account?
+      a(href="/auth/register") Register here
+
+  // === Script for toggle ===
+  script.
+    const toggle = document.getElementById('togglePassword');
+    const pwd = document.getElementById('password');
+    toggle.addEventListener('click', () => {
+      const type = pwd.getAttribute('type') === 'password' ? 'text' : 'password';
+      pwd.setAttribute('type', type);
+      toggle.textContent = type === 'password' ? '👁️' : '🙈';
+    });

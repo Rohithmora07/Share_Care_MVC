@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .page-content
+    .container.text-center.py-5
+      if statusCode === 404
+        .error-section
+          h1.display-1.text-danger 😕 404
+          h2.mb-4 Page Not Found
+      else
+        .error-section
+          h1.display-1.text-danger ⚠️ Error
+          h2.mb-4= title || 'Something went wrong'
+      
+      if message
+        p.lead.mb-4= message
+
+      if stack && process.env.NODE_ENV === 'development'
+        .alert.alert-danger.mt-4.text-start
+          pre.mb-0
+            code= stack
+      
+      a.btn.btn-primary.mt-4(href="/") Return Home

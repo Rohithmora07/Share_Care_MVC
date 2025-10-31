@@ -1,0 +1,28 @@
+// views/partials/donatePopup.pug
+#donatePopup.popup-overlay(onclick="closeDonatePopup()")
+  .popup-content(onclick="event.stopPropagation()")
+    .popup-header
+      h2#popupTitle Quick Donate
+      button.popup-close(onclick="closeDonatePopup()") ×
+    .popup-body
+      p#popupSubtitle Choose amount and donate instantly!
+      
+      #popupQuickAmounts.quick-amounts
+        .quick-amount(onclick="selectPopupAmount(500)") ₹500
+        .quick-amount(onclick="selectPopupAmount(1000)") ₹1,000
+        .quick-amount(onclick="selectPopupAmount(2500)") ₹2,500
+        .quick-amount(onclick="selectPopupAmount(5000)") ₹5,000
+        .quick-amount(onclick="selectPopupAmount(10000)") ₹10,000
+        .quick-amount(onclick="selectPopupCustom()") Custom
+
+      .custom-amount#popupCustomAmountDiv(style="display:none")
+        input#popupCustomAmount(type="number" placeholder="Enter amount" min="100")
+        button.btn.btn-primary(onclick="confirmPopupCustomAmount()") Confirm
+
+      .payment-methods
+        .payment-method.selected(onclick="selectPopupPaymentMethod('upi')") UPI
+        .payment-method(onclick="selectPopupPaymentMethod('card')") Cards
+        .payment-method(onclick="selectPopupPaymentMethod('netbanking')") Net Banking
+        .payment-method(onclick="selectPopupPaymentMethod('wallet')") Wallet
+
+      button.donate-now-btn(onclick="proceedToPopupDonate()") Donate Now

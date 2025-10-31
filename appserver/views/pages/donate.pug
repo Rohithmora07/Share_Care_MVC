@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  .container.py-5
+    h1.text-center.mb-5 Donate
+
+    form.card.p-4.shadow.mx-auto(style="max-width:500px;" action="/donations/add" method="POST")
+      .mb-3
+        label.form-label Name
+        input.form-control(type="text" name="donorName" required)
+      .mb-3
+        label.form-label Amount (₹)
+        input.form-control(type="number" name="amount" min="1" required)
+      .mb-3
+        label.form-label Message
+        textarea.form-control(name="message" rows="3")
+      button.btn.btn-success.w-100 Donate Now
+
+    if donations && donations.length
+      h3.mt-5 Recent Donations
+      table.table
+        thead
+          tr
+            th Name
+            th Amount
+            th Date
+        tbody
+          each d in donations
+            tr
+              td= d.donorName
+              td ₹#{d.amount}
+              td= new Date(d.date).toLocaleDateString()

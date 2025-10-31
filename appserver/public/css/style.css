@@ -1,0 +1,267 @@
+/* 🌅 Sunrise Orange Theme */
+body {
+  background: url("/sun.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #333333;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Subtle warm overlay for all pages */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(139, 73, 4, 0.25);
+  z-index: -1;
+}
+
+/* ========================= NAVBAR ========================= */
+.navbar,
+header,
+.nav-container {
+  background: rgba(255, 255, 255, 0.443) !important;
+  box-shadow: 0 3px 10px rgba(6, 0, 0, 0.1);
+}
+
+.nav-link,
+.brand-text,
+header a {
+  color: #333 !important;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+header a:hover {
+  color: #ff7b00 !important;
+}
+
+.navbar, .navbar a, .navbar-toggler-icon {
+  color: #e07511;
+  filter: invert(1);
+}
+
+/* ========================= HERO SECTION ========================= */
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 0 0 40px;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-overlay {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero-box {
+  background: rgba(255, 145, 30, 0.93);
+  border-radius: 18px;
+  padding: 30px 40px;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(255, 120, 0, 0.35);
+  max-width: 600px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  text-align: left;
+  margin-left: 20px;
+}
+
+.hero-title {
+  font-weight: 800;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #fff9f2;
+  margin-bottom: 20px;
+}
+
+/* ========================= BUTTONS ========================= */
+.btn-orange {
+  background-color: #ff7b00;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 3px 10px rgba(255, 123, 0, 0.4);
+}
+
+.btn-orange:hover {
+  background-color: #e86a00;
+  transform: scale(1.05);
+}
+
+.btn-outline-orange {
+  color: #ff7b00;
+  border: 2px solid #ff7b00;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+  background: transparent;
+}
+
+.btn-outline-orange:hover {
+  background-color: #ff7b00;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ========================= HOME PAGE CARDS ========================= */
+.row.mt-5 .col-md-4:first-child {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.row.mt-5 .col-md-4:not(:first-child) {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+@media (max-width: 768px) {
+  .row.mt-5 .col-md-4:first-child,
+  .row.mt-5 .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* ========================= CARDS ========================= */
+.card-hover {
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.95));
+  box-shadow: 0 3px 10px rgba(255, 123, 0, 0.1);
+  transition: all 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.card-hover:nth-child(3n+1) {
+  border-top-color: #FF7B00;
+  background: linear-gradient(145deg, rgba(255, 236, 217, 0.93), rgba(255, 255, 255, 0.95));
+}
+
+.card-hover:nth-child(3n+2) {
+  border-top-color: #4CAF50;
+  background: linear-gradient(145deg, rgba(232, 245, 233, 0.93), rgba(255, 255, 255, 0.95));
+}
+
+.card-hover:nth-child(3n+3) {
+  border-top-color: #2196F3;
+  background: linear-gradient(145deg, rgba(227, 242, 253, 0.93), rgba(255, 255, 255, 0.95));
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-hover:nth-child(3n+1):hover {
+  box-shadow: 0 6px 15px rgba(255, 123, 0, 0.25);
+}
+
+.card-hover:nth-child(3n+2):hover {
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.25);
+}
+
+.card-hover:nth-child(3n+3):hover {
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.25);
+}
+
+/* ========================= COMMON BOX STYLES ========================= */
+.container,
+.card,
+.form-container,
+.content-box {
+  background-color: rgba(255, 255, 255, 0.92);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================= FOOTER ========================= */
+footer {
+  background-color: #1c1c1c;
+  color: #f7f7f7;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+  font-size: 0.9rem;
+  border-top: 3px solid #ff7b00;
+}
+
+footer a {
+  color: #ff7b00;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffa64d;
+}
+
+/* ========================= BUTTON CONTAINER ========================= */
+.btn-container {
+  margin-top: 20px;
+}
+
+/* ========================= RESPONSIVE ========================= */
+@media (max-width: 768px) {
+  .home-hero {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 250px;
+    border-radius: 0;
+  }
+
+  .hero-box {
+    margin: 20px auto;
+  }
+}
+/* Existing styles end here */
+
+/* ========================= POPUP STYLES START ========================= */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(2px);
+}
+
+/* ... rest of popup CSS here ... */
+
